@@ -1,0 +1,12 @@
+version: '3.5'
+
+services: 
+  kotlin-restful-postgres:
+    container_name: "arlite-restful"
+    image: postgres:12-alpine
+    ports: 
+      - 5432:5432
+    environment: 
+      POSTGRES_DB: arlite_restful
+      POSTGRES_USER: arlite
+      POSTGRES_PASSWORD: admin
