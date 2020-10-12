@@ -5,8 +5,8 @@ services:
     container_name: "arlite-restful"
     image: postgres:12-alpine
     ports: 
-      - 5432:5432
+      - 5433:5432
     environment: 
       POSTGRES_DB: arlite_restful
       POSTGRES_USER: arlite
-      POSTGRES_PASSWORD: admin
+      POSTGRES_PASSWORD: root
