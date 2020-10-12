@@ -1,14 +1,15 @@
 package arlite.kotlinrestfulapi.controller
 
-import org.springframework.web.bind.anotation.RestControllerAdvice
-import org.springframework.web.bind.anotation.ExceptionHandler
-import javax.validation.ConstraintsViolationException
+import arlite.kotlinrestfulapi.model.Response
+import org.springframework.web.bind.annotation.RestControllerAdvice
+import org.springframework.web.bind.annotation.ExceptionHandler
+import javax.validation.ConstraintViolationException
 
 @RestControllerAdvice
 class ErrorController {
 
-  @ExceptionHandler(value = [ConstraintsViolationException::class])
-  fun validationHandler(exception : ConstraintsViolationException): Response<String> {
+  @ExceptionHandler(value = [ConstraintViolationException::class])
+  fun validationHandler(exception : ConstraintViolationException): Response<String> {
     return Response(
       code = 400,
       status = "failed",

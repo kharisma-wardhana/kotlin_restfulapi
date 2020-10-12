@@ -1,9 +1,9 @@
 package arlite.kotlinrestfulapi.entity
 import java.util.*
-import javac.persistence.Entity
-import javac.persistence.Table
-import javac.persistence.Id
-import javac.persistence.Column
+import javax.persistence.Entity
+import javax.persistence.Table
+import javax.persistence.Id
+import javax.persistence.Column
 
 @Entity
 @Table(name = "products")

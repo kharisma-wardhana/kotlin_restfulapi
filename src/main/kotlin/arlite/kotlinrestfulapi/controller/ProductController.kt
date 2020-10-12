@@ -1,8 +1,8 @@
 package arlite.kotlinrestfulapi.controller
 
-import org.springframework.web.bind.anotation.RestController
-import org.springframework.web.bind.anotation.PostMapping
-import org.springframework.web.bind.anotation.RequestBody
+import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.RequestBody
 import arlite.kotlinrestfulapi.service.ProductService
 import arlite.kotlinrestfulapi.model.CreateProductRequest
 import arlite.kotlinrestfulapi.model.Response
@@ -21,7 +21,7 @@ class ProductController(val productService:ProductService) {
     return Response(
       code = 200,
       status = "success",
-      data = res
+      data = res,
       message = "product created successfully"
     )
   }

@@ -4,6 +4,8 @@ import org.springframework.stereotype.Service
 import arlite.kotlinrestfulapi.service.ProductService
 import arlite.kotlinrestfulapi.repository.ProductRepo
 import arlite.kotlinrestfulapi.entity.Product
+import arlite.kotlinrestfulapi.model.CreateProductRequest
+import arlite.kotlinrestfulapi.model.ProductResponse
 import arlite.kotlinrestfulapi.validation.ValidationUtil
 import java.util.*
 
@@ -18,10 +20,10 @@ class ProductServiceImpl(
     validUtil.validate(request)
 
     val product = Product(
-      id = request.id,
-      name = request.name,
-      price= request.price,
-      quantity = request.quantity
+      id = request.id!!,
+      name = request.name!!,
+      price= request.price!!,
+      quantity = request.quantity!!,
       createdAt = Date(),
       updatedAt = Date()
     )
@@ -32,7 +34,7 @@ class ProductServiceImpl(
       id = product.id,
       name = product.name,
       price= product.price,
-      quantity = product.quantity
+      quantity = product.quantity,
       createdAt = product.createdAt,
       updatedAt = product.updatedAt
     )
