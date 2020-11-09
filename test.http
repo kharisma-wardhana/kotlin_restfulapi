@@ -1,0 +1,14 @@
+POST http://localhost:8084/api/products
+Content-Type: application/json
+Accept: application/json
+
+{
+	"id" : "A001",
+	"name" : "CheckAdd",
+	"price" : 2500,
+	"quantity" : 10
+}
+
+GET http://localhost:8084/api/products/A002
+Content-Type: application/json
+Accept: application/json

@@ -6,7 +6,11 @@ services:
     image: postgres:12-alpine
     ports: 
       - 5433:5432
+    volumes:
+      - .:/var/lib/my_data
     environment: 
-      POSTGRES_DB: arlite_restful
+      PGUSER: arlite
       POSTGRES_USER: arlite
-      POSTGRES_PASSWORD: root
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: arlite_restful
+    restart: always
